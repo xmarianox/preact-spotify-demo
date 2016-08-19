@@ -1,6 +1,7 @@
 import { h, Component } from 'preact';
 import ListView from 'components/ListView';
 import { fetchTracks } from 'services/datalayer';
+import Player from 'components/Player.js';
 
 export default class Home extends Component {
 
@@ -29,10 +30,9 @@ export default class Home extends Component {
 	playPreview(item) {
 		const audio = item.preview_url;
 		this.setState({ audio });
-
 		const player = document.getElementById('player');
-		//console.log(player);
-		player.play();
+		player.load();
+		player.play().then(console.log('PLAY!'));
 	}
 
 	onInput(event) {
@@ -42,7 +42,6 @@ export default class Home extends Component {
 	}
 
 	render({}, { items, value, audio }) {
-		//console.log('query:', value);
 		return (
 			<div>
 				<div style={styles.inputContainer}>
@@ -50,12 +49,11 @@ export default class Home extends Component {
 				</div>
 				<ListView items={items} renderItem={this.renderItem.bind(this)} playPreview={this.playPreview.bind(this)} />
 
-				<audio id="player">
-				  <source src={audio} type="audio/mpeg" />
-				</audio>
+				<Player audioSrc={audio} />
 			</div>
 		);
 	}
+
 };
 
 const styles = {
@@ -102,8 +100,5 @@ const styles = {
 		fontSize: 14,
 		lineHeight: '26px',
 		fontWeight: '400'
-	},
-	player: {
-		display: 'block'
 	}
 };
