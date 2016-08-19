@@ -4,9 +4,7 @@
   "description": "Demo app desarrollada con Preact utilizando la API de Spotify. Basada en el tutorial de @impronunciable.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --inline --hot --progress --progress --content-base public --port 8888",
-    "build": "webpack",
-    "deploy": "webpack && surge public"
+    "start": "webpack-dev-server --inline --hot --progress --progress --content-base public --port 8888"
   },
   "keywords": [],
   "author": "Mariano Molina <mariano.molina23@gmail.com>",
