@@ -12,10 +12,6 @@ Install the dependencies
 ## Run the development server
 `$ npm start`
 
-## Deploy (?)
-
-`$ npm deploy`
-
 
 ## Licencia
 This project is licensed under the MIT license.

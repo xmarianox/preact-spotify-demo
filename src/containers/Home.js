@@ -42,7 +42,7 @@ export default class Home extends Component {
 	}
 
 	render({}, { items, value, audio }) {
-		console.log('query:', value);
+		//console.log('query:', value);
 		return (
 			<div>
 				<div style={styles.inputContainer}>
